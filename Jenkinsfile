@@ -4,7 +4,6 @@ pipeline {
         stage('build') {
             steps {
                 echo "==========Building=========="
-		zsh "dotnet build Devops.sln"
             }
         }
 		
