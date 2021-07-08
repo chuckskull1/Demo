@@ -4,7 +4,6 @@ pipeline {
         stage('build') {
             steps {
                 echo "==========Building========="
-		sh '/usr/local/share/dotnet/dotnet build Devops.sln -p:Configuration=release -v:q'
             }
         }
 		
@@ -20,7 +19,6 @@ pipeline {
         {
             steps {
                 echo "==========BuildDockerImage=========="
-		sh '/usr/local/bin/docker build -t rdimri/webapitest .'
             }
         }
 		stage('Tag and Push image to Docker')
