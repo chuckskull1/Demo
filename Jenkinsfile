@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "==========Building=========="
+                echo "==========Building========="
+		sh '/usr/local/share/dotnet/dotnet build WebApiTest.sln -p:Configuration=release -v:q'
             }
         }
 		
@@ -11,21 +12,21 @@ pipeline {
 		
         stage('publish') {
             steps {
-                echo "==========Building=========="
+                echo "==========Publishing=========="
             }
         }
 		
 		stage ('BuildDockerImage')
         {
             steps {
-                echo "==========Building=========="
+                echo "==========BuildDockerImage=========="
             }
         }
 		stage('Tag and Push image to Docker')
         {
             steps{
                     
-                    echo "==========Building=========="
+                    echo "==========Push image=========="
             }
         }
 		stage('Allure report generation')
