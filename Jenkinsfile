@@ -20,7 +20,7 @@ pipeline {
         {
             steps {
                 echo "==========BuildDockerImage=========="
-		sh 'usr/local/bin/docker build -t rdimri/webapitest .'
+		sh '/usr/local/bin/docker build -t rdimri/webapitest .'
             }
         }
 		stage('Tag and Push image to Docker')
