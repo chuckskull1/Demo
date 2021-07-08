@@ -10,9 +10,9 @@ pipeline {
 		
 		
 		
-        stage('publish') {
+        stage('Test') {
             steps {
-                echo "==========Publishing=========="
+                echo "==========Test=========="
             }
         }
 		
@@ -20,6 +20,7 @@ pipeline {
         {
             steps {
                 echo "==========BuildDockerImage=========="
+		sh 'docker build -t rdimri/webapitest .'
             }
         }
 		stage('Tag and Push image to Docker')
