@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "==========Building========="
-		sh 'dotnet build Devops.sln -p:Configuration=release -v:q'
+		sh '/usr/local/share/dotnet/dotnet build Devops.sln -p:Configuration=release -v:q'
             }
         }
 		
