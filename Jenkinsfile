@@ -19,7 +19,7 @@ pipeline {
 		stage ('BuildDockerImage')
         {
             steps {
-                echo "==========BuildDockerImage=========="
+                echo "==========BuildDockerImage==========="
             }
         }
 		stage('Tag and Push image to Docker')
