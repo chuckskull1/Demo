@@ -20,6 +20,7 @@ pipeline {
         {
             steps {
                 echo "==========BuildDockerImage==========="
+		sh '/usr/local/bin/docker build -t rdimri/devops:v1.0 .'
             }
         }
 		stage('Tag and Push image to Docker')
@@ -27,6 +28,8 @@ pipeline {
             steps{
                     
                     echo "==========Push image=========="
+		    sh '/usr/local/bin/docker login -u rdimri -p regno@123'
+		    sh '/usr/local/bin/docker push rdimri/devops:v1.0'
             }
         }
 		stage('Allure report generation')
