@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rohitdimri/Projects/Devops/Devops/Devops.csproj": {}
+    "/Users/rohitdimri/Documents/Repo/Demo/Devops/Devops.csproj": {}
   },
   "projects": {
-    "/Users/rohitdimri/Projects/Devops/Devops/Devops.csproj": {
+    "/Users/rohitdimri/Documents/Repo/Demo/Devops/Devops.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rohitdimri/Projects/Devops/Devops/Devops.csproj",
+        "projectUniqueName": "/Users/rohitdimri/Documents/Repo/Demo/Devops/Devops.csproj",
         "projectName": "Devops",
-        "projectPath": "/Users/rohitdimri/Projects/Devops/Devops/Devops.csproj",
+        "projectPath": "/Users/rohitdimri/Documents/Repo/Demo/Devops/Devops.csproj",
         "packagesPath": "/Users/rohitdimri/.nuget/packages/",
-        "outputPath": "/Users/rohitdimri/Projects/Devops/Devops/obj/",
+        "outputPath": "/Users/rohitdimri/Documents/Repo/Demo/Devops/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/rohitdimri/.config/NuGet/NuGet.Config"
