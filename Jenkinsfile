@@ -15,15 +15,22 @@ pipeline {
                 echo "==========Test=========="
             }
         }
-		
-		stage ('BuildDockerImage')
+	    
+	stage('') {
+		steps {
+			sh '/usr/local/share/dotnet/dotnet publish Devops.sln -p:Configuration=release -v:q'
+		}
+	}
+	    
+	stage ('BuildDockerImage')
         {
             steps {
                 echo "==========BuildDockerImage==========="
 		sh '/usr/local/bin/docker build -t rdimri/devops:v1.0 .'
             }
         }
-		stage('Tag and Push image to Docker')
+	    
+	stage('Tag and Push image to Docker')
         {
             steps{
                     
@@ -32,7 +39,8 @@ pipeline {
 		    sh '/usr/local/bin/docker push rdimri/devops:v1.0'
             }
         }
-		stage('Allure report generation')
+	    
+	stage('Allure report generation')
         {
             steps
             {
