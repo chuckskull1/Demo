@@ -26,7 +26,7 @@ pipeline {
         {
             steps {
                 echo "==========BuildDockerImage==========="
-		sh '/usr/local/bin/docker build -t rdimri/devops:v1.0 .'
+		sh '/usr/local/bin/docker build -t rdimri/devops:latest .'
             }
         }
 	    
@@ -36,7 +36,7 @@ pipeline {
                     
                     echo "==========Push image=========="
 		    sh '/usr/local/bin/docker login -u rdimri -p regno@123'
-		    sh '/usr/local/bin/docker push rdimri/devops:v1.0'
+		    sh '/usr/local/bin/docker push rdimri/devops:latest'
             }
         }
 	    
