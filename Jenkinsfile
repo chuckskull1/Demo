@@ -18,8 +18,8 @@ pipeline {
 	    
 	stage('Publish') {
 		steps {
-			sh '/usr/local/share/dotnet/dotnet restore'
-			sh '/usr/local/share/dotnet/dotnet publish Devops.sln -c Release'
+		    sh '/usr/local/share/dotnet/dotnet restore'
+		    sh '/usr/local/share/dotnet/dotnet publish Devops.sln -c Release'
 		}
 	}
 	    
