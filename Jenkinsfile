@@ -26,7 +26,7 @@ pipeline {
 	stage ('BuildDockerImage')
         {
             steps {
-                echo "==========BuildDockerImage==========="
+                echo "==========BuildDockerImage=========="
 		sh '/usr/local/bin/docker build -t rdimri/devops:latest .'
             }
         }
