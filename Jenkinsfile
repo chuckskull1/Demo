@@ -4,7 +4,7 @@ pipeline {
 	string(
 		name: "BRANCH_NAME",
 		description: "Branch name that you want to build",
-		defaultvalue: "main"
+		defaultValue: "main"
 		)
 	}
     stages {
