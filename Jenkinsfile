@@ -6,6 +6,11 @@ pipeline {
 		description: "Branch name that you want to build",
 		defaultValue: "main"
 		)
+	choice(
+		name: "ENVIRONMENT",
+		description: "Select the environment you want to deploy your code on",
+		choices : ["QA","Stage","Prod"]
+		)
 	}
     stages {
         stage('build') {
