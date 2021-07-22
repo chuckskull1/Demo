@@ -2,9 +2,9 @@ pipeline {
     agent any
     parameters {
 	string(
-		name: BRANCH_NAME
-		description: Branch name that you want to build
-		defaultvalue: main
+		name: "BRANCH_NAME"
+		description: "Branch name that you want to build"
+		defaultvalue: "main"
 		)
 	}
     stages {
