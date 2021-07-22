@@ -15,6 +15,11 @@ pipeline {
 		name: "DOCKER_PASS",
 		description: "Password for your docker user"
 		)
+	choice(
+		name: "WORKFLOW",
+		description: "Select the environment you want to deploy your code on",
+		choices : ["Build","Deploy"]
+		)
 	}
     stages {
         stage('build') {
@@ -33,6 +38,9 @@ pipeline {
         }
 	    
 	stage('Publish') {
+		when{
+                expression{params.WORKFLOW == "Deploy"}
+            }
 		steps {
 		    sh '/usr/local/share/dotnet/dotnet restore'
 		    sh '/usr/local/share/dotnet/dotnet publish Devops.sln -c Release'
@@ -41,6 +49,9 @@ pipeline {
 	    
 	stage ('BuildDockerImage')
         {
+		when{
+                expression{params.WORKFLOW == "Deploy"}
+            }
             steps {
                 echo "==========BuildDockerImage=========="
 		sh '/usr/local/bin/docker build -t rdimri/devops:latest .'
@@ -49,6 +60,9 @@ pipeline {
 	    
 	stage('Tag and Push image to Docker')
         {
+		when{
+                expression{params.WORKFLOW == "Deploy"}
+            }
             steps{
                     
                     echo "==========Push image=========="
