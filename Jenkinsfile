@@ -11,6 +11,10 @@ pipeline {
 		description: "Select the environment you want to deploy your code on",
 		choices : ["QA","Stage","Prod"]
 		)
+	string(
+		name: "DOCKER_PASS",
+		description: "Password for your docker user"
+		)
 	}
     stages {
         stage('build') {
@@ -48,7 +52,7 @@ pipeline {
             steps{
                     
                     echo "==========Push image=========="
-		    sh '/usr/local/bin/docker login -u rdimri -p regno@123'
+		    sh '/usr/local/bin/docker login -u rdimri -p ${DOCKER_PASS}'
 		    sh '/usr/local/bin/docker push rdimri/devops:latest'
             }
         }
