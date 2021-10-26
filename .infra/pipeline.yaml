@@ -1,4 +1,4 @@
-template: dotnetcore2.1
+template: dotnetcore3.1
 version: 1
 build:
   solution_file: Devops.sln
