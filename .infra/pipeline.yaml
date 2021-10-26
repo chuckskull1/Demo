@@ -1,0 +1,4 @@
+template: dotnetcore2
+version: 1
+build:
+  solution_file: Devops.sln
