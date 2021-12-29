@@ -6,11 +6,6 @@ pipeline {
 		description: "Branch name that you want to build",
 		defaultValue: "main"
 		)
-	choice(
-		name: "ENVIRONMENT",
-		description: "Select the environment you want to deploy your code on",
-		choices : ["QA","Stage","Prod"]
-		)
 	string(
 		name: "DOCKER_PASS",
 		description: "Password for your docker user"
@@ -42,8 +37,8 @@ pipeline {
                 expression{params.WORKFLOW == "Deploy"}
             }
 		steps {
-		    sh '/usr/local/share/dotnet/dotnet restore'
-		    sh '/usr/local/share/dotnet/dotnet publish Devops.sln -c Release'
+		    sh 'dotnet restore'
+		    sh 'dotnet publish Devops.sln -c Release'
 		}
 	}
 	    
@@ -54,7 +49,7 @@ pipeline {
             }
             steps {
                 echo "==========BuildDockerImage=========="
-		sh '/usr/local/bin/docker build -t rdimri/devops:latest .'
+		sh 'docker build -t rdimri/devops:latest .'
             }
         }
 	    
