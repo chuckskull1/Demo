@@ -20,7 +20,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "==========Building========="
-		sh '/usr/local/share/dotnet/dotnet build Devops.sln -p:Configuration=release -v:q'
+		sh 'dotnet build Devops.sln -p:Configuration=release -v:q'
             }
         }
 		
@@ -61,8 +61,8 @@ pipeline {
             steps{
                     
                     echo "==========Push image=========="
-		    sh '/usr/local/bin/docker login -u rdimri -p ${DOCKER_PASS}'
-		    sh '/usr/local/bin/docker push rdimri/devops:latest'
+		    sh 'docker login -u rdimri -p ${DOCKER_PASS}'
+		    sh 'docker push rdimri/devops:latest'
             }
         }
 	    
